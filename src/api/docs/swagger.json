@@ -1,0 +1,44 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Plantilla profesional para APIs en Go",
+        "title": "Go API Template",
+        "termsOfService": "http://example.com/terms/",
+        "contact": {
+            "name": "Antonio",
+            "email": "antonio@example.com"
+        },
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        },
+        "version": "1.0"
+    },
+    "host": "localhost:8080",
+    "basePath": "/api/v1",
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Devuelve un Hola Mundo",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "ejemplo"
+                ],
+                "summary": "Endpoint de ejemplo",
+                "responses": {
+                    "200": {
+                        "description": "Hola Mundo!",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

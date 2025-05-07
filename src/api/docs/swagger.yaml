@@ -1,0 +1,30 @@
+basePath: /api/v1
+host: localhost:8080
+info:
+  contact:
+    email: antonio@example.com
+    name: Antonio
+  description: Plantilla profesional para APIs en Go
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+  termsOfService: http://example.com/terms/
+  title: Go API Template
+  version: "1.0"
+paths:
+  /:
+    get:
+      consumes:
+      - application/json
+      description: Devuelve un Hola Mundo
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: Hola Mundo!
+          schema:
+            type: string
+      summary: Endpoint de ejemplo
+      tags:
+      - ejemplo
+swagger: "2.0"
