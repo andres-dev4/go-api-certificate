@@ -1,15 +1,30 @@
 basePath: /api/v1
-host: localhost:8080
+definitions:
+  models.Certificate:
+    properties:
+      created_at:
+        type: integer
+      credential:
+        type: string
+      description:
+        type: string
+      expiry_date:
+        type: string
+      id:
+        type: string
+      issue_date:
+        type: string
+      title:
+        type: string
+      updated_at:
+        type: integer
+      user_id:
+        type: string
+    type: object
 info:
-  contact:
-    email: antonio@example.com
-    name: Antonio
-  description: Plantilla profesional para APIs en Go
-  license:
-    name: MIT
-    url: https://opensource.org/licenses/MIT
-  termsOfService: http://example.com/terms/
-  title: Go API Template
+  contact: {}
+  description: API para gestión de certificados
+  title: Certificate API
   version: "1.0"
 paths:
   /:
@@ -27,4 +42,21 @@ paths:
       summary: Endpoint de ejemplo
       tags:
       - ejemplo
+  /certificates:
+    get:
+      consumes:
+      - application/json
+      description: Get all certificates
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Certificate'
+            type: array
+      summary: List all certificates
+      tags:
+      - certificates
 swagger: "2.0"

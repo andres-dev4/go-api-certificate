@@ -1,3 +1,7 @@
+// @title Certificate API
+// @version 1.0
+// @description API para gestión de certificados
+// @BasePath /api/v1
 package main
 
 import (

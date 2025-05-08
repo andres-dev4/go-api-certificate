@@ -1,20 +1,11 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "Plantilla profesional para APIs en Go",
-        "title": "Go API Template",
-        "termsOfService": "http://example.com/terms/",
-        "contact": {
-            "name": "Antonio",
-            "email": "antonio@example.com"
-        },
-        "license": {
-            "name": "MIT",
-            "url": "https://opensource.org/licenses/MIT"
-        },
+        "description": "API para gestión de certificados",
+        "title": "Certificate API",
+        "contact": {},
         "version": "1.0"
     },
-    "host": "localhost:8080",
     "basePath": "/api/v1",
     "paths": {
         "/": {
@@ -37,6 +28,66 @@
                             "type": "string"
                         }
                     }
+                }
+            }
+        },
+        "/certificates": {
+            "get": {
+                "description": "Get all certificates",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "certificates"
+                ],
+                "summary": "List all certificates",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/models.Certificate"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Certificate": {
+            "type": "object",
+            "properties": {
+                "created_at": {
+                    "type": "integer"
+                },
+                "credential": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "expiry_date": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "string"
+                },
+                "issue_date": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "updated_at": {
+                    "type": "integer"
+                },
+                "user_id": {
+                    "type": "string"
                 }
             }
         }

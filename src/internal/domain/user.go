@@ -1,12 +1,10 @@
 package domain
 
-import "gorm.io/gorm"
+import (
+	"github.com/andres-dev4/go-api-certificate/src/internal/models"
+)
 
-type User struct {
-	gorm.Model
-	Name  string `gorm:"size:255" validate:"required"`
-	Email string `gorm:"size:255;uniqueIndex" validate:"required,email"`
-}
+type User = models.User
 
 // UserRepository interface (puerto)
 type UserRepository interface {

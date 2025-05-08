@@ -3,6 +3,7 @@ package database
 import (
 	"log"
 
+	"github.com/andres-dev4/go-api-certificate/src/internal/models"
 	"gorm.io/gorm"
 )
 
@@ -49,20 +50,5 @@ func (m *Migrator) autoMigrateModels() error {
 	return nil
 }
 
-type Certificate struct {
-	gorm.Model
-	UserID      string `gorm:"type:uuid;not null;index"`
-	Title       string `gorm:"size:255;not null"`
-	Description string `gorm:"type:text"`
-	IssueDate   string `gorm:"type:date;not null"`
-	ExpiryDate  string `gorm:"type:date"`
-	Credential  string `gorm:"type:text;not null"`
-}
-
-// User define el modelo de usuario en la base de datos
-type User struct {
-	gorm.Model
-	Name  string `gorm:"size:255;not null"`
-	Email string `gorm:"size:255;not null;uniqueIndex"`
-	// Agrega más campos según sea necesario
-}
+type User = models.User
+type Certificate = models.Certificate

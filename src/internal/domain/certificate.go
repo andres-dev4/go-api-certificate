@@ -3,23 +3,15 @@ package domain
 import (
 	"context"
 	"errors"
+
+	"github.com/andres-dev4/go-api-certificate/src/internal/models"
 )
+
+type Certificate = models.Certificate
 
 var (
 	ErrCertificateNotFound = errors.New("certificate not found")
 )
-
-type Certificate struct {
-	ID          string `json:"id" gorm:"primaryKey;type:uuid;default:uuid_generate_v4()"`
-	UserID      string `json:"user_id" gorm:"type:uuid;not null;index"`
-	Title       string `json:"title" gorm:"size:255;not null"`
-	Description string `json:"description" gorm:"type:text"`
-	IssueDate   string `json:"issue_date" gorm:"type:date;not null"`
-	ExpiryDate  string `json:"expiry_date" gorm:"type:date"`
-	Credential  string `json:"credential" gorm:"type:text;not null"`
-	CreatedAt   int64  `json:"created_at" gorm:"autoCreateTime"`
-	UpdatedAt   int64  `json:"updated_at" gorm:"autoUpdateTime"`
-}
 
 // Resto de tu código (interfaces, etc.)...
 type CertificateRepository interface {
