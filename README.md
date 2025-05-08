@@ -44,9 +44,9 @@ Una API robusta para gestión de certificados digitales construida con Go y Gin.
 ## Entorno Local
 
 ```bash
-# Construir binario
-go build -o api cmd/api/main.go
+# Asignar permisos a init.sh
+chmod +x init.sh
 
 # Ejecutar
-./api --env production
+./init.sh
 ````
